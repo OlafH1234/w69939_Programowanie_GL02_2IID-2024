@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadania</title>
+</head>
+<body>
+
+<h2>Zadanie 1: Obliczenie silni</h2>
+<button onclick="alert(silnia(5))">Oblicz silnię z 5</button>
+
+<h2>Zadanie 2: Trzy przyciski do zmiany koloru</h2>
+<button id="button1" onclick="changeColor('button1')">Przycisk 1</button>
+<button id="button2" onclick="changeColor('button2')">Przycisk 2</button>
+<button id="button3" onclick="changeColor('button3')">Przycisk 3</button>
+
+<h2>Zadanie 3: Przycisk do zmiany widoczności elementu</h2>
+<button onclick="toggleVisibility('elementToToggle')">ukryj/pokarz</button>
+<div id="elementToToggle">Ten element można ukryć/pokazać</div>
+
+<h2>Zadanie 4: Dodawanie wartości z pola tekstowego do listy</h2>
+<input type="text" id="textInput">
+<button onclick="addToList()">Dodaj do listy</button>
+<ul id="list"></ul>
+
+<h2>Zadanie 5: Dodawanie danych do tabeli</h2>
+<input type="text" id="nameInput" placeholder="Imię">
+<input type="text" id="surnameInput" placeholder="Nazwisko">
+<button onclick="addToTable()">Dodaj do tabeli</button>
+<table id="dataTable">
+    <thead>
+        <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script>
+// Zadanie 1
+function silnia(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    } else {
+        return n * silnia(n - 1);
+    }
+}
+
+// Zadanie 2
+function changeColor(buttonId) {
+    document.getElementById('button1').style.backgroundColor = 'red';
+    document.getElementById('button2').style.backgroundColor = 'green';
+    document.getElementById('button3').style.backgroundColor = 'blue';
+    document.getElementById(buttonId).style.backgroundColor = 'yellow';
+}
+
+// Zadanie 3
+function toggleVisibility(elementId) {
+    var element = document.getElementById(elementId);
+    element.style.display = (element.style.display === 'none') ? '' : 'none';
+}
+
+// Zadanie 4
+function addToList() {
+    var text = document.getElementById('textInput').value;
+    var list = document.getElementById('list');
+    var listItem = document.createElement('li');
+    listItem.textContent = text;
+    list.appendChild(listItem);
+    document.getElementById('textInput').value = '';
+}
+
+// Zadanie 5
+function addToTable() {
+    var name = document.getElementById('nameInput').value;
+    var surname = document.getElementById('surnameInput').value;
+    var table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+    var newRow = table.insertRow();
+    var cell1 = newRow.insertCell(0);
+    var cell2 = newRow.insertCell(1);
+    cell1.textContent = name;
+    cell2.textContent = surname;
+    document.getElementById('nameInput').value = '';
+    document.getElementById('surnameInput').value = '';
+}
+</script>
+
+</body>
+</html>
