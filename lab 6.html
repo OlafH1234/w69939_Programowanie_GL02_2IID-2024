@@ -7,7 +7,7 @@
 <body>
 
 <h2>Zadanie 1: Obliczenie silni</h2>
-<button onclick="alert(silnia(5))">Oblicz silnię z 5</button>
+<button onclick="showSilniaAlert()">Oblicz silnię</button>
 
 <h2>Zadanie 2: Trzy przyciski do zmiany koloru</h2>
 <button id="button1" onclick="changeColor('button1')">Przycisk 1</button>
@@ -15,7 +15,7 @@
 <button id="button3" onclick="changeColor('button3')">Przycisk 3</button>
 
 <h2>Zadanie 3: Przycisk do zmiany widoczności elementu</h2>
-<button onclick="toggleVisibility('elementToToggle')">ukryj/pokarz</button>
+<button onclick="toggleVisibility('elementToToggle')">pokarz / ukryj</button>
 <div id="elementToToggle">Ten element można ukryć/pokazać</div>
 
 <h2>Zadanie 4: Dodawanie wartości z pola tekstowego do listy</h2>
@@ -40,6 +40,14 @@
 
 <script>
 // Zadanie 1
+function showSilniaAlert() {
+    var n = prompt("Podaj liczbę dla której chcesz obliczyć silnię:");
+    if (n !== null && n !== "") {
+        var result = silnia(parseInt(n));
+        alert('Silnia z ' + n + ' to ' + result);
+    }
+}
+
 function silnia(n) {
     if (n === 0 || n === 1) {
         return 1;
