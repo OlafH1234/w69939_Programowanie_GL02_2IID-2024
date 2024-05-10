@@ -10,12 +10,12 @@ document.getElementById('sameAddress').addEventListener('change', function() {
     const correspondenceAddressInput = document.getElementById('correspondenceAddress');
     
     if (this.checked) {
-        correspondenceAddressInput.value = ''; // Wyczyść adres korespondencyjny
-        correspondenceAddressContainer.style.display = 'none'; // Ukryj pole adresu korespondencyjnego
-        correspondenceAddressInput.disabled = true; // Ustaw pole adresu korespondencyjnego jako nieaktywne
+        correspondenceAddressInput.value = ''; 
+        correspondenceAddressContainer.style.display = 'none'; 
+        correspondenceAddressInput.disabled = true; 
     } else {
-        correspondenceAddressContainer.style.display = 'block'; // Wyświetl pole adresu korespondencyjnego
-        correspondenceAddressInput.disabled = false; // Ustaw pole adresu korespondencyjnego jako aktywne
+        correspondenceAddressContainer.style.display = 'block'; 
+        correspondenceAddressInput.disabled = false; 
     }
 });
 
@@ -28,15 +28,15 @@ document.getElementById('country').addEventListener('change', function() {
             <option value="kujawsko-pomorskie">Kujawsko-Pomorskie</option>
             <!-- inne województwa -->
         `;
-        provinceInput.disabled = false; // Ustaw pole województwa jako aktywne
+        provinceInput.disabled = false; 
     } else {
-        provinceInput.innerHTML = `<option value="">Wybierz</option>`; // Usuń opcje województw
-        provinceInput.disabled = true; // Ustaw pole województwa jako nieaktywne
+        provinceInput.innerHTML = `<option value="">Wybierz</option>`; 
+        provinceInput.disabled = true; 
     }
 });
 
 document.getElementById('phone').addEventListener('input', function() {
-    this.value = this.value.replace(/\D/g, ''); // Usuń wszystkie znaki nie będące cyframi
+    this.value = this.value.replace(/\D/g, ''); 
 });
 
 function validateForm() {
@@ -147,8 +147,8 @@ function checkAge(birthdate) {
     const inputDate = new Date(birthdate);
     
     if (inputDate >= eighteenYearsAgo) {
-        return false; // Osoba jest za młoda
+        return false; 
     } else {
-        return true; // Osoba jest pełnoletnia
+        return true; 
     }
 }
