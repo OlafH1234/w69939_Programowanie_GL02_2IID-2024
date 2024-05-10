@@ -13,27 +13,22 @@
             <div>
                 <label for="firstName">Imię:</label>
                 <input type="text" id="firstName" name="firstName" required>
-                <span id="firstNameError" class="error"></span>
             </div>
             <div>
                 <label for="lastName">Nazwisko:</label>
                 <input type="text" id="lastName" name="lastName" required>
-                <span id="lastNameError" class="error"></span>
             </div>
             <div>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-                <span id="emailError" class="error"></span>
             </div>
             <div>
                 <label for="password">Hasło:</label>
                 <input type="password" id="password" name="password" minlength="8" required>
-                <span id="passwordError" class="error"></span>
             </div>
             <div>
                 <label for="confirmPassword">Powtórz hasło:</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" required>
-                <span id="confirmPasswordError" class="error"></span>
             </div>
             <div>
                 <label for="gender">Płeć:</label>
@@ -43,22 +38,37 @@
                     <option value="female">Kobieta</option>
                     <option value="other">Inna</option>
                 </select>
-                <span id="genderError" class="error"></span>
             </div>
             <div>
                 <label for="phone">Telefon:</label>
                 <input type="text" id="phone" name="phone" required>
-                <span id="phoneError" class="error"></span>
             </div>
             <div>
                 <label for="birthdate">Data urodzenia:</label>
                 <input type="date" id="birthdate" name="birthdate" required>
-                <span id="birthdateError" class="error"></span>
             </div>
             <div>
                 <label for="country">Kraj:</label>
                 <input type="text" id="country" name="country" required>
-                <span id="countryError" class="error"></span>
+            </div>
+            <div>
+                <label for="province">Województwo:</label>
+                <select id="province" name="province" disabled>
+                    <option value="">Wybierz</option>
+                    <!-- opcje województw -->
+                </select>
+            </div>
+            <div>
+                <label for="address">Adres zamieszkania:</label>
+                <input type="text" id="address" name="address" disabled>
+            </div>
+            <div>
+                <label for="sameAddress">Adres korespondencyjny jest taki sam jak adres zamieszkania:</label>
+                <input type="checkbox" id="sameAddress" name="sameAddress" checked>
+            </div>
+            <div id="correspondenceAddressContainer" style="display: none;">
+                <label for="correspondenceAddress">Adres korespondencyjny:</label>
+                <input type="text" id="correspondenceAddress" name="correspondenceAddress" disabled>
             </div>
             <button type="submit">Zapisz</button>
         </form>
